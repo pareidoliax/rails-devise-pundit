@@ -2,7 +2,7 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
 def label_me
-  (0..3).map do
+  [0,1,1,1,1,2,2,3,4].sample.times.map do
     Label.find_or_create_by!(name: Faker::GameOfThrones.house, colour: Label.colours.keys.sample)
   end
 end
