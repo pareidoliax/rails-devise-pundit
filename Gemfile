@@ -23,6 +23,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'pundit'
+gem 'faker'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
@@ -30,7 +31,6 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'rspec-rails'
 end
 group :test do

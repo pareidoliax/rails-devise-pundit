@@ -1,3 +1,10 @@
 class Label < ApplicationRecord
-  belongs_to :labelable
+  enum colour: [:default, :primary, :success, :info, :warning, :danger]
+
+  # Associations
+  has_many :labelables, dependent: :destroy
+  has_many :users, through: :labelables
+
+  # Validations
+
 end
