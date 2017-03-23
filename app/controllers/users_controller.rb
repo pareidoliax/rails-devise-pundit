@@ -16,9 +16,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
-      redirect_to users_path, :notice => "User updated."
+      redirect_back(fallback_location: users_path), :success => "User updated."
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      redirect_back(fallback_location: users_path), :danger => "Unable to update user."
     end
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   private
 
   def secure_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:role, :labels)
   end
 
 end
