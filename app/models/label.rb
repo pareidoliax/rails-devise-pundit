@@ -8,7 +8,7 @@ class Label < ApplicationRecord
   # Validations
   validates :name, presence: true,
                    length: { in: 2..32 },
-                   uniqueness: {scope: :colour}
+                   uniqueness: { scope: :colour, case_sensitive: false }
 
   validates :colour, presence: true
 
