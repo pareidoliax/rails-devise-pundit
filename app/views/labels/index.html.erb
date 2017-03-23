@@ -12,3 +12,13 @@
     </table>
   </div>
 </div>
+<div class="row">
+  <div class="col-xs-12">
+    <h3>New Label</h3>
+    <%= form_for(Label.new) do |f| %>
+      <%= f.text_field :name %>
+      <%= f.select(:colour, Label.colours.keys.map {|colour| [colour.titleize, colour]}) %>
+      <%= f.submit 'Update label', :class => 'button-xs' %>
+    <% end %>
+  </div>
+</div>
