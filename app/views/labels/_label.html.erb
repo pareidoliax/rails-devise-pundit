@@ -1,0 +1,13 @@
+<td>
+  <%= make_label label %>
+</td>
+<td>
+  <%= form_for(label) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.select(:colour, Label.colours.keys.map {|colour| [colour.titleize, colour]}) %>
+    <%= f.submit 'Update label', :class => 'button-xs' %>
+  <% end %>
+</td>
+<td>
+  <%= link_to("Delete label", label_path(label), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => ['btn','btn-danger','btn-xs']) %>
+</td>
