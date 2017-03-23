@@ -1,9 +1,14 @@
 module LabelsHelper
 
-  def make_label(user)
+  def user_labels(user)
     user.labels.map do |label|
-      content_tag( :span, class: ['label', "label-#{label.colour}"] ) {label.name}
+      make_label(label)
     end.join(' ').html_safe
   end
+
+  def make_label(label)
+    content_tag( :span, class: ['label', "label-#{label.colour}"] ) {label.name}
+  end
+
 
 end

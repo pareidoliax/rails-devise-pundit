@@ -5,6 +5,11 @@
     <p>Email: <%= @user.email if @user.email %></p>
   </div>
   <div class='col-xs-2'>
-
+    <%= form_for @user do |f| %>
+      <%= f.submit "Update Labels", class: ['btn', 'btn-primary'] %> 
+      <%= f.collection_check_boxes(:label_ids, Label.all, :id, :return_self) do |b| %>
+        <%= content_tag(:div, class: 'checkbox') { b.label { b.check_box + make_label(b.text) } } %>
+      <% end %>
+    <% end %>
   </div>
 </div>

@@ -7,4 +7,9 @@ class Label < ApplicationRecord
 
   # Validations
 
+  # Instance Methods
+  def return_self
+    return self
+  end
+
 end
