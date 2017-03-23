@@ -6,6 +6,13 @@ class Label < ApplicationRecord
   has_many :users, through: :labelables
 
   # Validations
+  validates :name, presence: true,
+                   length: { in: 2..32 },
+                   uniqueness: {scope: :colour}
+
+  validates :colour, presence: true
+
+
 
   # Instance Methods
   def return_self
