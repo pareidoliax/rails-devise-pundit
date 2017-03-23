@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    authorize User
+    authorize(User)
   end
 
   def show
@@ -16,9 +16,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
-      redirect_back(fallback_location: users_path), :success => "User updated."
+      redirect_back(fallback_location: users_path, success: "User updated.")
     else
-      redirect_back(fallback_location: users_path), :danger => "Unable to update user."
+      redirect_back(fallback_location: users_path, danger: "Unable to update user.")
     end
   end
 
