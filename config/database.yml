@@ -3,12 +3,13 @@ default: &default
   encoding: unicode
   pool: 5
   username: xander
+  password: helloworld
 
 development:
   <<: *default
-  database: younility_development
+  database: label_demo_development
 
 
 test:
   <<: *default
-  database: younility_test
+  database: label_demo_test
