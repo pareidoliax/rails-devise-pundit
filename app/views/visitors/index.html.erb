@@ -1,2 +1,20 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<row>
+  <col-xs-12>
+    <br/>
+    <div class="jumbotron">
+      <h1>Xander Labels</h1>
+      <p>Welcome to Xander Labels. Xander Labels is a simple app demonstrating a many to many relation using Ruby on Rails version 5. This app has users that can have many labels. You can add and remove labels from users and create and edit labels as an admin. Admin account credentials are available on login page as this app is a demonstration.</p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Sign In</a>
+        <a class="btn btn-default btn-lg" href="#" role="button">Sign Up</a>
+        <a class="btn btn-info btn-lg" href="#" role="button">Github Repository</a>
+      </p>
+    </div>
+
+
+    <h3>Stats</h3>
+    <p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+    <p><%= link_to 'Labels:', labels_path %> <%= Label.count %> available</p>
+  </col-xs-12>
+</row>
+
